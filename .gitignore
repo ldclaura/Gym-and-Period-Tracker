@@ -182,5 +182,9 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
-
+.megaGymDataset.sql
 .megaGymDataset.csv
+.gymdataset.db
+.gymdataset.sqbpro
+.megaGymDataset.csv
+.megaGymDataset.sql
