@@ -16,19 +16,25 @@ sqlfile = 'megaGymDataset.sql'
 dbfile = 'gymdataset.db'
 
 
+def search_dataset(column, search):
+    con = sqlite3.connect(dbfile)
 
+    cur = con.cursor()
+    
+    if column.capitalize() == "Id":
+        for row in cur.execute(f'SELECT * FROM gymdataset WHERE {column.capitalize()} LIKE "{search}";'):
+            # print(row)
+            con.close()
+            return row
+    else:
+        all = []
+        for row in cur.execute(f'SELECT * FROM gymdataset WHERE {column.capitalize()} LIKE "%{search}%";'):
+            all.append(row)
+        con.close()
+        return tuple(all)
 
+print(search_dataset("Id", "10"))
 
-def pandy():
-    # ,Title,Desc,Type,BodyPart,Equipment,Level,Rating,RatingDesc
-    panda_data = pd.read_csv(file)
-    print(panda_data["Title"]) #prints exercise column
-    print(panda_data["Desc"]) #prints temp column
-    print(panda_data["BodyPart"]) #prints temp column
-    print(panda_data["Equipment"]) #prints temp column
-    print(panda_data["Level"]) #prints temp column
-    print(panda_data["Rating"]) #prints temp column
-    print(panda_data["RatingDesc"]) #prints temp column
 
 
 #APISs
