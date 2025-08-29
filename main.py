@@ -11,9 +11,9 @@ load_dotenv()
 
 #NOTE use sqlite sqlalchemy, sort csv as db instead. look at day 63 for how to do it
 
-file = 'megaGymDataset.csv'
-sqlfile = 'megaGymDataset.sql'
-dbfile = 'gymdataset.db'
+file = 'instance/megaGymDataset.csv'
+sqlfile = 'instance/megaGymDataset.sql'
+dbfile = 'instance/gymdataset.db'
 
 
 def search_dataset(column, search):
